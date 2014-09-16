@@ -14,7 +14,7 @@ class OpenldapBdb < Formula
               --prefix=#{prefix}
               --sysconfdir=#{etc}
               --localstatedir=#{var}]
-    args << "--enable-bdb=no" << "--enable-hdb=no" if build.without? "berkeley-db"
+    args << "--enable-bdb=no" << "--enable-hdb=no" if build.without? "bdb-5.1.29"
     args << "--enable-memberof" if build.with? "memberof"
     args << "--enable-sssvlv=yes" if build.with? "sssvlv"
 
