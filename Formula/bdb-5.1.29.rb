@@ -1,6 +1,6 @@
 require 'formula'
 
-class BerkeleyDb < Formula
+class Bdb5129 < Formula
   homepage 'http://www.oracle.com/technology/products/berkeley-db/index.html'
   url 'http://download.oracle.com/berkeley-db/db-5.1.29.tar.gz'
   md5 'a94ea755ab695bc04f82b94d2e24a1ef'
