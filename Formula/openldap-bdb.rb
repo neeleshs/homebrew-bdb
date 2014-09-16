@@ -1,6 +1,6 @@
 require 'formula'
 
-class Openldap < Formula
+class OpenldapBdb < Formula
   homepage 'http://www.openldap.org/software/'
   url 'ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/openldap-2.4.39.tgz'
   sha256 '8267c87347103fef56b783b24877c0feda1063d3cb85d070e503d076584bf8a7'
