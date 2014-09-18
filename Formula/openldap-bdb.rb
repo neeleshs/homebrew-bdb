@@ -20,8 +20,8 @@ class OpenldapBdb < Formula
     ENV["LDFLAGS"] ="-L/usr/local/Cellar/bdb-5.1.29/5.1.29/lib"
     ENV["CPPFLAGS"] ="-I/usr/local/Cellar/bdb-5.1.29/5.1.29/include"
     ENV["LD_LIBRARY_PATH"]= "/usr/local/Cellar/bdb-5.1.29/5.1.29/lib"
-    system("./configure ",*args)
-    system( "make install")
+    system "./configure ", *args
+    system "make install"
     (var+'run').mkpath
   end
 end
