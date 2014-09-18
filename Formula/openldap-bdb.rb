@@ -18,7 +18,7 @@ class OpenldapBdb < Formula
     args << "--enable-memberof" if build.with? "memberof"
     args << "--enable-sssvlv=yes" if build.with? "sssvlv"
     env_variables = {"LDFLAGS"=>"-L/usr/local/Cellar/bdb-5.1.29/5.1.29/lib", "CPPFLAGS"=>"-I/usr/local/Cellar/bdb-5.1.29/5.1.29/include", "LD_LIBRARY_PATH"=>"/usr/local/Cellar/bdb-5.1.29/5.1.29/lib"}
-    system env_variables,"./configure", *args
+    system(env_variables,"./configure "+ args.join(" "))
     system "make install"
     (var+'run').mkpath
   end
