@@ -17,7 +17,7 @@ class OpenldapBdb < Formula
     args << "--enable-bdb=no" << "--enable-hdb=no" if build.without? "bdb-5.1.29"
     args << "--enable-memberof" if build.with? "memberof"
     args << "--enable-sssvlv=yes" if build.with? "sssvlv"
-
+    args << "-L/usr/local/Cellar/bdb-5.1.29/5.1.29/lib -I/usr/local/Cellar/bdb-5.1.29/5.1.29/include"
     system "./configure", *args
     system "make install"
     (var+'run').mkpath
