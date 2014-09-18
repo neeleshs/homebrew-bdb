@@ -17,10 +17,11 @@ class OpenldapBdb < Formula
     args << "--enable-bdb=no" << "--enable-hdb=no" if build.without? "bdb-5.1.29"
     args << "--enable-memberof" if build.with? "memberof"
     args << "--enable-sssvlv=yes" if build.with? "sssvlv"
-    env_vars = {"LDFLAGS" => "-L/usr/local/Cellar/bdb-5.1.29/5.1.29/lib", "CPPFLAGS" => "-I/usr/local/Cellar/bdb-5.1.29/5.1.29/include", "LD_LIBRARY_PATH" => "/usr/local/Cellar/bdb-5.1.29/5.1.29/lib"}
-    system(env_vars, "./configure "+ args.join(" "))
-    system( env_vars, "make depend")
-    system( env_vars, "make install")
+    ENV["LDFLAGS"] ="-L/usr/local/Cellar/bdb-5.1.29/5.1.29/lib"
+    ENV["CPPFLAGS"] ="-I/usr/local/Cellar/bdb-5.1.29/5.1.29/include"
+    ENV["LD_LIBRARY_PATH"]= "/usr/local/Cellar/bdb-5.1.29/5.1.29/lib"
+    system("./configure ",*args)
+    system( "make install")
     (var+'run').mkpath
   end
 end
